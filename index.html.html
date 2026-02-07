@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rose Day Surprise 🌹</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+    .slideshow {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .slide {
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      font-size: 2em;
+      padding: 20px;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .caption {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-style: italic;
+    }
+    img {
+      max-width: 250px;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="yourSong.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="slideshow">
+    <div class="slide active">
+      🌹 Happy Rose Day, My Love 🌹
+      <div class="caption">You are my sweetest bloom.</div>
+      <img src="roseGif1.gif" alt="Rose GIF">
+    </div>
+    <div class="slide">
+      💕 Forever Yours 💕
+      <div class="caption">Every rose reminds me of you.</div>
+      <img src="roseGif2.gif" alt="Romantic GIF">
+    </div>
+    <div class="slide">
+      ❤️ I Love You ❤️
+      <div class="caption">My heart blossoms only for you.</div>
+      <img src="roseGif3.gif" alt="Love GIF">
+    </div>
+  </div>
+
+  <script>
+    let slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 4000);
+  </script>
+</body>
+</html>
